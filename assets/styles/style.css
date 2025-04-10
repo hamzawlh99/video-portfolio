@@ -7,75 +7,60 @@
 
 body, html {
   height: 100%;
-  font-family: 'Helvetica Neue', sans-serif;
-  background: #101010;
+  font-family: 'Roboto', sans-serif;
+  background-color: #1e1e1e;
   color: white;
-  line-height: 1.6;
   overflow-x: hidden;
   cursor: pointer;
-  transition: background 0.5s ease;
-}
-
-.container {
-  width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 /* Section Styles */
 section {
-  padding: 80px 0;
+  padding: 100px 20px;
   text-align: center;
-  margin-bottom: 50px;
   position: relative;
-  opacity: 0;
-  transform: translateY(50px);
   transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Show sections on scroll */
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://www.transparenttextures.com/patterns/diamond-squares.png');
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1517360587983-52c92405cde4?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg0OXwwfDF8c2VhY2h8NXx8Y3VsdHVyYWwlMjB3ZWIlMjBjdWxkfGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080');
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: white;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-  position: relative;
+  transform: scale(1);
+  transition: transform 0.5s ease;
 }
 
 .hero-content h1 {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 20px;
-  text-transform: uppercase;
   letter-spacing: 5px;
-  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
 .hero-content p {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .cta {
-  padding: 12px 30px;
+  padding: 14px 40px;
   background-color: #ff4081;
   color: white;
   font-weight: bold;
   border-radius: 50px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
 }
 
 .cta:hover {
@@ -86,29 +71,27 @@ section.visible {
 
 /* About Section */
 .about {
-  background: #1c1c1c;
-  padding: 80px 0;
+  background: #2d2d2d;
+  color: #bbb;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .about h2 {
   font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
   color: #ff4081;
+  margin-bottom: 20px;
 }
 
 .about p {
   font-size: 1.2rem;
-  color: #bbb;
-  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  line-height: 1.6;
+  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Projects Section */
 .projects {
-  background: #1c1c1c;
+  background: #222;
   padding: 80px 0;
 }
 
@@ -118,21 +101,22 @@ section.visible {
   margin-bottom: 40px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  color: #ff4081;
 }
 
-.projects-grid {
+.projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 40px;
   justify-items: center;
 }
 
 .project-item {
   position: relative;
-  overflow: hidden;
   border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .project-item iframe {
@@ -153,44 +137,39 @@ section.visible {
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* Contact Section */
 .contact {
   background: #333;
-  padding: 80px 0;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 80px 20px;
 }
 
 .contact h2 {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  color: #ff4081;
 }
 
 .contact p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-.contact a {
-  padding: 12px 30px;
+.contact .cta {
+  padding: 14px 40px;
   background-color: #ff4081;
   color: white;
   font-weight: bold;
   border-radius: 50px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
-.contact a:hover {
+.contact .cta:hover {
   background-color: #e91e63;
   transform: scale(1.1);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Footer */
@@ -199,14 +178,9 @@ footer {
   padding: 20px;
   background: #222;
   color: #bbb;
-  font-size: 1rem;
 }
 
-/* Mouse Cursor Effect */
-body {
-  cursor: pointer;
-}
-
+/* Hover Effects */
 .hero:hover {
   transform: scale(1.05);
 }
@@ -223,20 +197,13 @@ body {
   }
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 3rem;
   }
 
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .projects-grid {
+  .projects-container {
     grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 60px 20px;
   }
 }
