@@ -42,7 +42,51 @@
   <section id="contact">
     <h2>Get in Touch</h2>
     <p>Interested in working with me? Feel free to reach out!</p>
-    <a href="mailto:h4busines@gmail.com">Email Me</a>
+    <a href="mailto:your.email@example.com">Email Me</a>
   </section>
+
+  <!-- JavaScript for Interactivity -->
+  <script>
+    // Hover effect for CTA button
+    const ctaButton = document.querySelector('.cta');
+    ctaButton.addEventListener('mouseenter', () => {
+      ctaButton.style.transform = 'scale(1.1)';
+      ctaButton.style.transition = 'transform 0.3s ease-in-out';
+    });
+    ctaButton.addEventListener('mouseleave', () => {
+      ctaButton.style.transform = 'scale(1)';
+    });
+
+    // Hover effect for video items
+    const videoItems = document.querySelectorAll('.video-item');
+    videoItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.style.transform = 'scale(1.05)';
+        item.style.transition = 'transform 0.3s ease-in-out';
+      });
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = 'scale(1)';
+      });
+    });
+
+    // Scroll-triggered animations
+    const sections = document.querySelectorAll('section');
+
+    const isVisible = (el) => {
+      const rect = el.getBoundingClientRect();
+      return rect.top >= 0 && rect.bottom <= window.innerHeight;
+    };
+
+    const animateOnScroll = () => {
+      sections.forEach(section => {
+        if (isVisible(section)) {
+          section.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once to animate initially visible sections
+  </script>
 </body>
 </html>
