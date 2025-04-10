@@ -15,6 +15,6 @@ projectItems.forEach(item => {
   });
   item.addEventListener('mouseleave', () => {
     item.style.transform = 'scale(1)';
-    item.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+    item.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
   });
 });

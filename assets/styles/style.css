@@ -8,12 +8,10 @@
 body, html {
   height: 100%;
   font-family: 'Helvetica Neue', sans-serif;
-  background-color: #121212;
-  color: #fff;
+  background: #0d0d0d;
+  color: white;
   line-height: 1.6;
   overflow-x: hidden;
-  position: relative;
-  user-select: none;
 }
 
 section {
@@ -24,20 +22,26 @@ section {
   z-index: 1;
 }
 
+/* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #232323, #444444);
+  background: linear-gradient(135deg, #000000, #3f3f3f);
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -62,15 +66,21 @@ section {
   transform: scale(1.05);
 }
 
-/* Section Titles */
+/* About and Projects Sections */
 h2 {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 40px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* Projects Container */
+.section {
+  background: linear-gradient(135deg, #1c1c1c, #333333);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -81,20 +91,16 @@ h2 {
 .project-item {
   position: relative;
   overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-item iframe {
   width: 100%;
   height: 315px;
-  border-radius: 15px;
+  border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-item iframe:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
 }
 
 .project-item p {
@@ -105,10 +111,19 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-  margin: 0;
 }
 
-/* Contact Section */
+/* Hover Animations for Project */
+.project-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+}
+
+.project-item iframe:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+}
+
 a {
   font-size: 1.2rem;
   color: #ff4081;
@@ -120,7 +135,7 @@ a:hover {
   color: #e91e63;
 }
 
-/* Hover Animation */
+/* Background Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -132,25 +147,19 @@ a:hover {
   }
 }
 
-/* Dark Mode Background for Sections */
-#about, #projects, #contact {
-  background-color: #1c1c1c;
-  border-radius: 10px;
-}
-
-/* Special Background Effects */
+/* Gradient Background Animation */
 @keyframes gradientAnimation {
   0% {
-    background: linear-gradient(135deg, #232323, #444444);
+    background: linear-gradient(135deg, #000000, #3f3f3f);
   }
   50% {
-    background: linear-gradient(135deg, #333333, #555555);
+    background: linear-gradient(135deg, #1c1c1c, #4c4c4c);
   }
   100% {
-    background: linear-gradient(135deg, #232323, #444444);
+    background: linear-gradient(135deg, #000000, #3f3f3f);
   }
 }
 
 .hero {
-  animation: gradientAnimation 10s ease-in-out infinite;
+  animation: gradientAnimation 15s ease-in-out infinite;
 }
