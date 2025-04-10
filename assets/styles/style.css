@@ -43,6 +43,7 @@ section {
   text-transform: uppercase;
   letter-spacing: 5px;
   animation: fadeIn 1s ease-in-out;
+  transform: translateZ(0);
 }
 
 .hero p {
@@ -63,7 +64,7 @@ section {
 
 .cta:hover {
   background-color: #e91e63;
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(10deg);
 }
 
 /* About and Projects Sections */
@@ -94,6 +95,7 @@ h2 {
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: perspective(1000px) rotateY(0deg);
 }
 
 .project-item iframe {
@@ -113,14 +115,14 @@ h2 {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-/* Hover Animations for Project */
+/* Hover Animations for Project (3D Hover Effect) */
 .project-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.1) rotateY(10deg);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
 }
 
 .project-item iframe:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
 }
 
@@ -162,4 +164,13 @@ a:hover {
 
 .hero {
   animation: gradientAnimation 15s ease-in-out infinite;
+}
+
+/* 3D Mouse Effect */
+body {
+  perspective: 1000px;
+}
+
+.project-item:hover {
+  transform: rotate3d(1, 1, 0, 10deg);
 }
