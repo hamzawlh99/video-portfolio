@@ -47,6 +47,20 @@
 
   <!-- JavaScript for Interactivity -->
   <script>
+    // Mouse movement interaction
+    const body = document.querySelector('body');
+
+    document.addEventListener('mousemove', (event) => {
+      const mouseX = event.clientX / window.innerWidth;
+      const mouseY = event.clientY / window.innerHeight;
+
+      const r = Math.round(mouseX * 255);
+      const g = Math.round(mouseY * 255);
+      const b = Math.round((1 - mouseX) * 255);
+
+      body.style.background = `rgb(${r}, ${g}, ${b})`; // Update background color based on mouse position
+    });
+
     // Hover effect for CTA button
     const ctaButton = document.querySelector('.cta');
     ctaButton.addEventListener('mouseenter', () => {
