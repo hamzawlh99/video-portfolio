@@ -3,104 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio for video editing services, showcasing short-form and long-form work.">
+  <meta name="description" content="A creative portfolio for video editing services.">
   <meta name="author" content="Your Name">
   <title>Video Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
-  <!-- Header Section -->
-  <header>
-    <h1>Your Name's Portfolio</h1>
-    <p>Video Editing Services | Short & Long Form | Any Style</p>
-    <a href="#contact" class="cta">Contact Me</a>
-  </header>
 
-  <!-- About Section (optional, can add more details) -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hi, I’m Your Name. I create stunning video edits, whether it’s for social media, commercials, or long-form content. No matter the style, I bring your vision to life.</p>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Specializing in short and long form video editing, no matter the style.</p>
+      <a href="#contact" class="cta">Let's Work Together</a>
+    </div>
   </section>
 
-  <!-- Video Projects Section -->
-  <section id="projects">
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I’m Your Name, a passionate video editor who brings creativity to every project.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
     <h2>My Work</h2>
-    <div class="video-grid">
-      <div class="video-item">
+    <div class="projects-container">
+      <div class="project-item">
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-        <p>Sample Project Title 1</p>
+        <p>Project Title 1</p>
       </div>
-      <div class="video-item">
+      <div class="project-item">
         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
-        <p>Sample Project Title 2</p>
+        <p>Project Title 2</p>
       </div>
-      <!-- Add more videos as needed -->
+      <!-- More projects -->
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="section">
     <h2>Get in Touch</h2>
-    <p>Interested in working with me? Feel free to reach out!</p>
+    <p>If you're interested in working with me, feel free to reach out!</p>
     <a href="mailto:your.email@example.com">Email Me</a>
   </section>
 
-  <!-- JavaScript for Interactivity -->
-  <script>
-    // Mouse movement interaction
-    const body = document.querySelector('body');
-
-    document.addEventListener('mousemove', (event) => {
-      const mouseX = event.clientX / window.innerWidth;
-      const mouseY = event.clientY / window.innerHeight;
-
-      const r = Math.round(mouseX * 255);
-      const g = Math.round(mouseY * 255);
-      const b = Math.round((1 - mouseX) * 255);
-
-      body.style.background = `rgb(${r}, ${g}, ${b})`; // Update background color based on mouse position
-    });
-
-    // Hover effect for CTA button
-    const ctaButton = document.querySelector('.cta');
-    ctaButton.addEventListener('mouseenter', () => {
-      ctaButton.style.transform = 'scale(1.1)';
-      ctaButton.style.transition = 'transform 0.3s ease-in-out';
-    });
-    ctaButton.addEventListener('mouseleave', () => {
-      ctaButton.style.transform = 'scale(1)';
-    });
-
-    // Hover effect for video items
-    const videoItems = document.querySelectorAll('.video-item');
-    videoItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        item.style.transform = 'scale(1.05)';
-        item.style.transition = 'transform 0.3s ease-in-out';
-      });
-      item.addEventListener('mouseleave', () => {
-        item.style.transform = 'scale(1)';
-      });
-    });
-
-    // Scroll-triggered animations
-    const sections = document.querySelectorAll('section');
-
-    const isVisible = (el) => {
-      const rect = el.getBoundingClientRect();
-      return rect.top >= 0 && rect.bottom <= window.innerHeight;
-    };
-
-    const animateOnScroll = () => {
-      sections.forEach(section => {
-        if (isVisible(section)) {
-          section.classList.add('visible');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once to animate initially visible sections
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
