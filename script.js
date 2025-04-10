@@ -9,3 +9,10 @@ document.addEventListener('scroll', function() {
     }
   });
 });
+
+// Mouse effect for dynamic background animation
+const heroSection = document.querySelector('.hero');
+heroSection.addEventListener('mousemove', (e) => {
+  const { clientX: mouseX, clientY: mouseY } = e;
+  heroSection.style.transform = `translate(-${mouseX / 20}px, -${mouseY / 20}px)`;
+});
